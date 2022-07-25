@@ -12,6 +12,10 @@ Details on setting up local machine, including PyCharm, etc. for this course.
 3. In PyCharm project, setup a venv for the project.
 4. Add README.md and gitignore files to the repo and commit/push.
 
+
+7/25 Steps:
+
+
 ## React Front End setup
 
 Add a React front end project.
