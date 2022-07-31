@@ -97,7 +97,7 @@ Make updates to App.js, etc.
 
 ### React-Bootstrap setup, header and footer components
 
-
+Added components/Header.js and components/Footer.js and then import them into App.js
 
 ## Backend Setup
 
@@ -111,10 +111,12 @@ Make updates to App.js, etc.
 
 ## Reference, Resources and Diagrams
 
-Diagram
+Diagrams below
 
 ```plantuml
 @startuml
+
+Title Frontend React public Folder
 
 folder "public/" as public_folder {
   file index.html as index
@@ -126,22 +128,37 @@ note left of public_folder
   contains all main public content in
   react project public folder
 end note
+@enduml
+```
+
+```plantuml
+@startuml
+
+Title Frontend Source folder/components
+
+folder "public/" as public_folder {
+  file index.html as index
+  file manifest.json as manifest
+  file robots.txt as robots
+}
 
 package "src/" as source_folder {
   file App.js as App.js
-'  file App.css as App.css
   file index.css as index.css
-'  file App.test.js as App.test.js
   file index.js as index.js
   file reportWebVitals.js as reportWebVitals.js
-'  file setupTests.js as setupTests.js
   file logo.svg as logo.svg
+  package "components/" as components_folder {
+     file Header.js as Header.js
+     file Footer.js as Footer.js
+  }
 }
 
 
 App.js <|-- logo.svg : import
 index <|-- index.js : imports \n automatically
 index.js <|-- App.js : imports
+```
 
 'App.js : App()
 
