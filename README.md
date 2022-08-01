@@ -99,6 +99,28 @@ Make updates to App.js, etc.
 
 Added components/Header.js and components/Footer.js and then import them into App.js
 
+Import bootstrap from bootswatch.com to get style related components.
+
+Download the bootstrap.min css file for Lux type from bootswatch and add to our src/ frontend folder.
+
+Use npm install to add boot strap.
+
+`npm install react-boostrap`
+NOTE: Had to restart PyCharm due to 404 error
+
+Component descriptions and code for react-bootstrap theme can be found at [react-bootstrap](https://react-bootstrap.github.)
+io/components/alerts
+
+Add link to font-awesome from [cdnjs](https://cdnjs.com/) by searching for font-awesome and copying the link.  This 
+gives us access to icons, etc. with the css file.
+For Font Awesome, adding an icon is done by adding the `<i>` tag with a class name attribute.  The classes for an 
+icon require 2 entries.  The first is for the style (solid, regular, Brands, etc.) and the other for the icon name.  
+So to add the shopping icon in the solid style we would add the following:
+
+`<i className="fas fa-shopping-cart"></i>`
+
+NOTE: fas is shorthand for fa-solid.
+
 ## Backend Setup
 
 ### DJango

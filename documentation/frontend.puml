@@ -1,0 +1,82 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+package "Some Group" {
+  HTTP - [First Component]
+  [Another Component]
+}
+
+node "Other Groups" {
+  FTP - [Second Component]
+  [First Component] --> FTP
+}
+
+cloud {
+  [Example 1]
+}
+
+
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+
+
+[Another Component] --> [Example 1]
+[Example 1] --> [Folder 3]
+[Folder 3] --> [Frame 4]
+
+@enduml
+
+@startuml
+
+Title Frontend React public Folder
+
+folder "public/" as public_folder {
+  file index.html as index
+  file manifest.json as manifest
+  file robots.txt as robots
+}
+
+note left of public_folder
+  contains all main public content in
+  react project public folder
+end note
+@enduml
+
+@startuml
+
+Title Frontend Source folder/components
+
+folder "public/" as public_folder {
+  file index.html as index
+  file manifest.json as manifest
+  file robots.txt as robots
+}
+
+package "src/" as source_folder {
+  file App.js as App.js
+  file index.css as index.css
+  file index.js as index.js
+  package "components/" as components_folder {
+     file Header.js as Header.js
+     file Footer.js as Footer.js
+  }
+  file reportWebVitals.js as reportWebVitals.js
+}
+
+note right of App.js
+  Define main DIV element and
+  includes header and footer.
+end note
+
+App.js <-l- Header.js
+App.js <-d- Footer.js
+index <-- index.js : imports \n automatically
+index.js <-- App.js : imports
+@enduml
