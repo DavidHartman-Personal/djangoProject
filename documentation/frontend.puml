@@ -80,3 +80,24 @@ App.js <-d- Footer.js
 index <-- index.js : imports \n automatically
 index.js <-- App.js : imports
 @enduml
+
+@startsalt
+' generate usage of salt for wireframes in plantuml can be found at
+' https://plantuml.com/salt
+' the below is the navigation bar components.
+'{
+'  Just plain text
+'  [This is my button]
+'  ()  Unchecked radio
+'  (X) Checked radio
+'  []  Unchecked box
+'  [X] Checked box
+'  "Enter text here   "
+'  ^This is a droplist^
+'}
+
+{
+  {/ <b>ProShop | Cart | Login }
+  '^ProShop^
+}
+@endsalt

@@ -19,6 +19,26 @@ Details on setting up local machine, including PyCharm, etc. for this course.
    npm/npx.
 4. Tested and confirmed React app, closed PyCharm project and ran react within djangoProject.
 
+### Project File/Folder Structure
+
+#### Django Framework Files/Folders
+
+| Name                         | Description                                                                                            |
+|------------------------------|--------------------------------------------------------------------------------------------------------|
+| djangoProject/               | Project Main folder                                                                                    |
+| djangoProject/djangoProject/ | The Django App folder.  This is created when creating a new Django project and providing and App Name. |
+| djangoProject/documentation/ | Contains documentation, including PlantUML files, etc.                                                 |
+| djangoProject/frontend/      | React Frontend folder, created with `npm create-react-app` command.                                    |
+
+#### React Framework Files/Folders
+
+These Files/Folders were created by running the `npm create-react-app` command.  See []()
+
+| Name                         | Description                                                                                            |
+|------------------------------|--------------------------------------------------------------------------------------------------------|
+| djangoProject/               | Project Main folder                                                                                    |
+
+
 ## Create Django Project in PyCharm
 
 Created Django Python project in PyCharm with an application named proshop. Project name is djangoProject. Once created
@@ -93,7 +113,7 @@ Make updates to App.js, etc.
 1. Copy resources/ folder from downloaded github repo to Django project.
 2. Replace the favicon.ico in public/ with newly added resources/favicon.ico.
 3. In index.html remove link to Learn React as well as the spinning icon.
-4. From the src/ folder we can remove App.css, setupTests.js and App.test.js files. 
+4. From the src/ folder we can remove App.css, setupTests.js and App.test.js files.
 
 ### React-Bootstrap setup, header and footer components
 
@@ -108,18 +128,49 @@ Use npm install to add boot strap.
 `npm install react-boostrap`
 NOTE: Had to restart PyCharm due to 404 error
 
-Component descriptions and code for react-bootstrap theme can be found at [react-bootstrap](https://react-bootstrap.github.)
+Component descriptions and code for react-bootstrap theme can be found
+at [react-bootstrap](https://react-bootstrap.github.)
 io/components/alerts
 
-Add link to font-awesome from [cdnjs](https://cdnjs.com/) by searching for font-awesome and copying the link.  This 
-gives us access to icons, etc. with the css file.
-For Font Awesome, adding an icon is done by adding the `<i>` tag with a class name attribute.  The classes for an 
-icon require 2 entries.  The first is for the style (solid, regular, Brands, etc.) and the other for the icon name.  
+Add link to font-awesome from [cdnjs](https://cdnjs.com/) by searching for font-awesome and copying the link. This gives
+us access to icons, etc. with the css file. For Font Awesome, adding an icon is done by adding the `<i>` tag with a
+class name attribute. The classes for an icon require 2 entries. The first is for the style (solid, regular, Brands,
+etc.) and the other for the icon name.  
 So to add the shopping icon in the solid style we would add the following:
 
 `<i className="fas fa-shopping-cart"></i>`
 
 NOTE: fas is shorthand for fa-solid.
+
+Add a shopping cart and user icons for the Navbar Cart and Login entries.
+
+```html
+
+<Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+        <Nav.Link href="/cart"><i className={"fas fa-shopping-cart"}></i>Cart</Nav.Link>
+        <Nav.Link href="/login"><i className={"fas fa-user"}></i>Login</Nav.Link>
+    </Nav>
+</Navbar.Collapse>
+```
+
+The below diagram represents the navigration bar that was added.
+
+```plantuml
+@startsalt
+{
+  {/ <b>ProShop | Cart | Login }
+  '^ProShop^
+}
+@endsalt
+```
+
+### Home Screen Product Listing
+
+Until we get the actual database lniked into the project, we will use some dummy data.
+
+Copy Products js in the frontend/src folder and the images/ folder into the public folder. 
+
 
 ## Backend Setup
 
@@ -193,7 +244,6 @@ index.js <|-- App.js : imports
 '  [Example 1]
 '}
 
-
 'database "MySql" {
 '  folder "This is my folder" {
 '    [Folder 3]
@@ -203,12 +253,12 @@ index.js <|-- App.js : imports
 '  }
 '}
 
-
 '[Another Component] --> [Example 1]
 '[Example 1] --> [Folder 3]
 '[Folder 3] --> [Frame 4]'
 
 @enduml
+
 ```
 
 
