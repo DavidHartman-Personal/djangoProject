@@ -49,6 +49,8 @@ note left of public_folder
 end note
 @enduml
 
+
+' The below diagram shows the various files and folders including imports
 @startuml
 
 Title Frontend Source folder/components
@@ -75,8 +77,71 @@ note right of App.js
   includes header and footer.
 end note
 
-App.js <-l- Header.js
-App.js <-d- Footer.js
+' diagram/relationship logic below
+App.js <-l- Header.js: imports
+App.js <-d- Footer.js: imports
+index <-- index.js : imports \n automatically
+index.js <-- App.js : imports
+@enduml
+
+@startuml
+!procedure $msg($source, $destination)
+  $source --> $destination
+!endprocedure
+
+!procedure $init_class($name)
+  class $name {
+    $addCommonMethod()
+  }
+!endprocedure
+
+
+!procedure $addCommonMethod()
+  toString()
+  hashCode()
+!endprocedure
+
+
+$init_class("foo1")
+$init_class("foo2")
+$msg("foo1", "foo2")
+@enduml
+
+@startuml
+
+Title Section 2: Starting the Front end\n9: Implementing the React Router
+
+rectangle "\
+This section goes through the process of\n\
+setting up the router and adding routes\
+"\
+#lightgreen
+
+folder "public/" as public_folder {
+  file index.html as index
+  file manifest.json as manifest
+  file robots.txt as robots
+}
+
+package "src/" as source_folder {
+  file App.js as App.js
+  file index.css as index.css
+  file index.js as index.js
+  package "components/" as components_folder {
+     file Header.js as Header.js
+     file Footer.js as Footer.js
+  }
+  file reportWebVitals.js as reportWebVitals.js
+}
+
+note right of App.js
+  Define main DIV element and
+  includes header and footer.
+end note
+
+' diagram/relationship logic below
+App.js <-l- Header.js: imports
+App.js <-d- Footer.js: imports
 index <-- index.js : imports \n automatically
 index.js <-- App.js : imports
 @enduml
